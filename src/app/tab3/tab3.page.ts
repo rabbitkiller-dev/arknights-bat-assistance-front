@@ -35,6 +35,14 @@ export class Tab3Page implements OnInit {
       event: $event,
       translucent: true,
     });
+    popover.onWillDismiss().then((result) => {
+      if (result.data.dismissed) {
+        return;
+      }
+      if (result.role === 'addCharacter') {
+        console.log('addCharacter', result);
+      }
+    });
     return await popover.present();
   }
 

@@ -9,6 +9,7 @@ import {Tab3PageRoutingModule} from './tab3-routing.module';
 import {Tab3Page} from './tab3.page';
 import {Tab3RightTopPopoverComponent} from './tab3-right-top.popover.component';
 import {SelectCharacterModelComponent} from './select-character.model.component';
+import {CharAttrEditModelComponent, CharLevelEditModelComponent} from './char-attr-edit.model.component';
 
 @NgModule({
   imports: [
@@ -22,6 +23,8 @@ import {SelectCharacterModelComponent} from './select-character.model.component'
   declarations: [
     Tab3Page,
     Tab3RightTopPopoverComponent,
+    CharAttrEditModelComponent,
+    CharLevelEditModelComponent,
     SelectCharacterModelComponent,
   ]
 })

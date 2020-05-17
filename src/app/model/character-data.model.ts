@@ -4,7 +4,7 @@ export interface CharacterDataModel {
   phase: number; // 精英化
 
   avatar?: string; // 头图
-  skills: CharacterSkillModel[]
+  skills?: CharacterSkillModel[]
 }
 export interface CharacterSkillModel {
   skillId?: string; // 技能id
