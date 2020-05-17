@@ -17,6 +17,21 @@
   <!-- add to homescreen for ios -->
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <!--计算root element size-->
+  <script>
+      (function(){
+          window.addEventListener("resize", ()=>{
+              reset();
+          });
+          function reset(){
+              var width = document.documentElement.getBoundingClientRect().width;
+              width > 750 && (width = 750);
+              var rem = width * 100 / 750;
+              document.documentElement.style.fontSize = rem + 'px';
+          }
+          reset();
+      })()
+  </script>
 </head>
 
 <body>

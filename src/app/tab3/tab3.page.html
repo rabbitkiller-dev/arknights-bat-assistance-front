@@ -1,17 +1,52 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Tab 3
-    </ion-title>
+    <ion-title>我的支援</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
+      <ion-title size="large">我的支援</ion-title>
+      <ion-buttons slot="primary">
+        <ion-button (click)="presentPopover($event)">
+          <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
+        </ion-button>
+      </ion-buttons>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+<!--  <app-explore-container name="Tab 3 page"></app-explore-container>-->
+
+  <div>
+    可支援人数: 2 正在支援: 3 <a>调整剩余好友位(5)</a>
+  </div>
+  <div class="ak-box">
+    <div class="ak-box-title">
+      <div class="ak-box-support-unit">
+        <span class="ak-box-support-unit-title">支援单位</span>
+      </div>
+      <div class="ak-box-skills">
+        <span class="ak-box-support-unit-title">支援单位</span>
+      </div>
+    </div>
+    <div class="ak-box-content">
+      <ion-virtual-scroll [items]="myCharacterList" approxItemHeight="320px">
+        <div class="ak-box-item" *virtualItem="let item; let itemBounds = bounds;">
+          <div class="ak-box-support-unit">
+            <ion-img class="ak-box-avatar-img" [src]="item.avatar"></ion-img>
+            <ion-img class="ak-box-avatar-img" [src]="item.avatar"></ion-img>
+          </div>
+          <div class="ak-box-skills">
+            <div class="ax-box-skill-icon" *ngFor="let skill of item.skills">
+              <ion-img class="skill-img" [src]="skill.imgUrl"></ion-img>
+            </div>
+            <div class="ax-box-skill-icon" *ngIf="item.skills.length < 1"></div>
+            <div class="ax-box-skill-icon" *ngIf="item.skills.length < 2"></div>
+            <div class="ax-box-skill-icon" *ngIf="item.skills.length < 3"></div>
+          </div>
+        </div>
+      </ion-virtual-scroll>
+    </div>
+  </div>
 </ion-content>

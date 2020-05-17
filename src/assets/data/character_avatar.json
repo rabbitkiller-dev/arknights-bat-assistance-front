@@ -1,0 +1,601 @@
+{
+  "map":{
+    "char_285_medic2#1": "https://pic.imgdb.cn/item/5e42ebdb2fb38b8c3cb0f6e0.png",
+    "char_002_amiya#1": "https://pic.imgdb.cn/item/5e4379b32fb38b8c3cc3a92d.png"
+  },
+"buildinEvolveMap": {
+    "char_285_medic2": {
+      "0": "char_285_medic2#1"
+    },
+    "char_286_cast3": {
+      "0": "char_286_cast3#1"
+    },
+    "char_376_therex": {
+      "0": "char_376_therex#1"
+    },
+    "char_502_nblade": {
+      "0": "char_502_nblade#1"
+    },
+    "char_500_noirc": {
+      "0": "char_500_noirc#1"
+    },
+    "char_503_rang": {
+      "0": "char_503_rang#1"
+    },
+    "char_501_durin": {
+      "0": "char_501_durin#1"
+    },
+    "char_009_12fce": {
+      "0": "char_009_12fce#1"
+    },
+    "char_123_fang": {
+      "0": "char_123_fang#1"
+    },
+    "char_240_wyvern": {
+      "0": "char_240_wyvern#1"
+    },
+    "char_192_falco": {
+      "0": "char_192_falco#1"
+    },
+    "char_208_melan": {
+      "0": "char_208_melan#1"
+    },
+    "char_281_popka": {
+      "0": "char_281_popka#1"
+    },
+    "char_209_ardign": {
+      "0": "char_209_ardign#1"
+    },
+    "char_122_beagle": {
+      "0": "char_122_beagle#1"
+    },
+    "char_284_spot": {
+      "0": "char_284_spot#1"
+    },
+    "char_124_kroos": {
+      "0": "char_124_kroos#1"
+    },
+    "char_211_adnach": {
+      "0": "char_211_adnach#1"
+    },
+    "char_121_lava": {
+      "0": "char_121_lava#1"
+    },
+    "char_120_hibisc": {
+      "0": "char_120_hibisc#1"
+    },
+    "char_212_ansel": {
+      "0": "char_212_ansel#1"
+    },
+    "char_210_stward": {
+      "0": "char_210_stward#1"
+    },
+    "char_278_orchid": {
+      "0": "char_278_orchid#1"
+    },
+    "char_141_nights": {
+      "0": "char_141_nights#1",
+      "2": "char_141_nights#2"
+    },
+    "char_109_fmout": {
+      "0": "char_109_fmout#1",
+      "2": "char_109_fmout#2"
+    },
+    "char_253_greyy": {
+      "0": "char_253_greyy#1",
+      "2": "char_253_greyy#2"
+    },
+    "char_235_jesica": {
+      "0": "char_235_jesica#1",
+      "2": "char_235_jesica#2"
+    },
+    "char_126_shotst": {
+      "0": "char_126_shotst#1",
+      "2": "char_126_shotst#2"
+    },
+    "char_190_clour": {
+      "0": "char_190_clour#1",
+      "2": "char_190_clour#2"
+    },
+    "char_133_mm": {
+      "0": "char_133_mm#1",
+      "2": "char_133_mm#2"
+    },
+    "char_118_yuki": {
+      "0": "char_118_yuki#1",
+      "2": "char_118_yuki#2"
+    },
+    "char_302_glaze": {
+      "0": "char_302_glaze#1",
+      "2": "char_302_glaze#2"
+    },
+    "char_198_blackd": {
+      "0": "char_198_blackd#1",
+      "2": "char_198_blackd#2"
+    },
+    "char_149_scave": {
+      "0": "char_149_scave#1",
+      "2": "char_149_scave#2"
+    },
+    "char_290_vigna": {
+      "0": "char_290_vigna#1",
+      "2": "char_290_vigna#2"
+    },
+    "char_151_myrtle": {
+      "0": "char_151_myrtle#1",
+      "2": "char_151_myrtle#2"
+    },
+    "char_130_doberm": {
+      "0": "char_130_doberm#1",
+      "2": "char_130_doberm#2"
+    },
+    "char_289_gyuki": {
+      "0": "char_289_gyuki#1",
+      "2": "char_289_gyuki#2"
+    },
+    "char_159_peacok": {
+      "0": "char_159_peacok#1",
+      "2": "char_159_peacok#2"
+    },
+    "char_193_frostl": {
+      "0": "char_193_frostl#1",
+      "2": "char_193_frostl#2"
+    },
+    "char_127_estell": {
+      "0": "char_127_estell#1",
+      "2": "char_127_estell#2"
+    },
+    "char_185_frncat": {
+      "0": "char_185_frncat#1",
+      "2": "char_185_frncat#2"
+    },
+    "char_301_cutter": {
+      "0": "char_301_cutter#1",
+      "2": "char_301_cutter#2"
+    },
+    "char_337_utage": {
+      "0": "char_337_utage#1",
+      "2": "char_337_utage#2"
+    },
+    "char_237_gravel": {
+      "0": "char_237_gravel#1",
+      "2": "char_237_gravel#2"
+    },
+    "char_236_rope": {
+      "0": "char_236_rope#1",
+      "2": "char_236_rope#2"
+    },
+    "char_117_myrrh": {
+      "0": "char_117_myrrh#1",
+      "2": "char_117_myrrh#2"
+    },
+    "char_187_ccheal": {
+      "0": "char_187_ccheal#1",
+      "2": "char_187_ccheal#2"
+    },
+    "char_298_susuro": {
+      "0": "char_298_susuro#1",
+      "2": "char_298_susuro#2"
+    },
+    "char_181_flower": {
+      "0": "char_181_flower#1",
+      "2": "char_181_flower#2"
+    },
+    "char_385_finlpp": {
+      "0": "char_385_finlpp#1",
+      "2": "char_385_finlpp#2"
+    },
+    "char_199_yak": {
+      "0": "char_199_yak#1",
+      "2": "char_199_yak#2"
+    },
+    "char_150_snakek": {
+      "0": "char_150_snakek#1",
+      "2": "char_150_snakek#2"
+    },
+    "char_196_sunbr": {
+      "0": "char_196_sunbr#1",
+      "2": "char_196_sunbr#2"
+    },
+    "char_260_durnar": {
+      "0": "char_260_durnar#1",
+      "2": "char_260_durnar#2"
+    },
+    "char_110_deepcl": {
+      "0": "char_110_deepcl#1",
+      "2": "char_110_deepcl#2"
+    },
+    "char_183_skgoat": {
+      "0": "char_183_skgoat#1",
+      "2": "char_183_skgoat#2"
+    },
+    "char_355_ethan": {
+      "0": "char_355_ethan#1",
+      "2": "char_355_ethan#2"
+    },
+    "char_277_sqrrel": {
+      "0": "char_277_sqrrel#1",
+      "2": "char_277_sqrrel#2"
+    },
+    "char_128_plosis": {
+      "0": "char_128_plosis#1",
+      "2": "char_128_plosis#2"
+    },
+    "char_275_breeze": {
+      "0": "char_275_breeze#1",
+      "2": "char_275_breeze#2"
+    },
+    "char_115_headbr": {
+      "0": "char_115_headbr#1",
+      "2": "char_115_headbr#2"
+    },
+    "char_102_texas": {
+      "0": "char_102_texas#1",
+      "2": "char_102_texas#2"
+    },
+    "char_261_sddrag": {
+      "0": "char_261_sddrag#1",
+      "2": "char_261_sddrag#2"
+    },
+    "char_401_elysm": {
+      "0": "char_401_elysm#1",
+      "2": "char_401_elysm#2"
+    },
+    "char_308_swire": {
+      "0": "char_308_swire#1",
+      "2": "char_308_swire#2"
+    },
+    "char_106_franka": {
+      "0": "char_106_franka#1",
+      "2": "char_106_franka#2"
+    },
+    "char_131_flameb": {
+      "0": "char_131_flameb#1",
+      "2": "char_131_flameb#2"
+    },
+    "char_155_tiger": {
+      "0": "char_155_tiger#1",
+      "2": "char_155_tiger#2"
+    },
+    "char_140_whitew": {
+      "0": "char_140_whitew#1",
+      "2": "char_140_whitew#2"
+    },
+    "char_252_bibeak": {
+      "0": "char_252_bibeak#1",
+      "2": "char_252_bibeak#2"
+    },
+    "char_143_ghost": {
+      "0": "char_143_ghost#1",
+      "2": "char_143_ghost#2"
+    },
+    "char_356_broca": {
+      "0": "char_356_broca#1",
+      "2": "char_356_broca#2"
+    },
+    "char_274_astesi": {
+      "0": "char_274_astesi#1",
+      "2": "char_274_astesi#2"
+    },
+    "char_333_sidero": {
+      "0": "char_333_sidero#1",
+      "2": "char_333_sidero#2"
+    },
+    "char_129_bluep": {
+      "0": "char_129_bluep#1",
+      "2": "char_129_bluep#2"
+    },
+    "char_204_platnm": {
+      "0": "char_204_platnm#1",
+      "2": "char_204_platnm#2"
+    },
+    "char_367_swllow": {
+      "0": "char_367_swllow#1",
+      "2": "char_367_swllow#2"
+    },
+    "char_219_meteo": {
+      "0": "char_219_meteo#1",
+      "2": "char_219_meteo#2"
+    },
+    "char_379_sesa": {
+      "0": "char_379_sesa#1",
+      "2": "char_379_sesa#2"
+    },
+    "char_279_excu": {
+      "0": "char_279_excu#1",
+      "2": "char_279_excu#2"
+    },
+    "char_002_amiya": {
+      "0": "char_002_amiya#1",
+      "1": "char_002_amiya#1+",
+      "2": "char_002_amiya#2"
+    },
+    "char_166_skfire": {
+      "0": "char_166_skfire#1",
+      "2": "char_166_skfire#2"
+    },
+    "char_306_leizi": {
+      "0": "char_306_leizi#1",
+      "2": "char_306_leizi#2"
+    },
+    "char_242_otter": {
+      "0": "char_242_otter#1",
+      "2": "char_242_otter#2"
+    },
+    "char_108_silent": {
+      "0": "char_108_silent#1",
+      "2": "char_108_silent#2"
+    },
+    "char_171_bldsk": {
+      "0": "char_171_bldsk#1",
+      "2": "char_171_bldsk#2"
+    },
+    "char_348_ceylon": {
+      "0": "char_348_ceylon#1",
+      "2": "char_348_ceylon#2"
+    },
+    "char_148_nearl": {
+      "0": "char_148_nearl#1",
+      "2": "char_148_nearl#2"
+    },
+    "char_226_hmau": {
+      "0": "char_226_hmau#1",
+      "2": "char_226_hmau#2"
+    },
+    "char_144_red": {
+      "0": "char_144_red#1",
+      "2": "char_144_red#2"
+    },
+    "char_243_waaifu": {
+      "0": "char_243_waaifu#1",
+      "2": "char_243_waaifu#2"
+    },
+    "char_107_liskam": {
+      "0": "char_107_liskam#1",
+      "2": "char_107_liskam#2"
+    },
+    "char_201_moeshd": {
+      "0": "char_201_moeshd#1",
+      "2": "char_201_moeshd#2"
+    },
+    "char_325_bison": {
+      "0": "char_325_bison#1",
+      "2": "char_325_bison#2"
+    },
+    "char_163_hpsts": {
+      "0": "char_163_hpsts#1",
+      "2": "char_163_hpsts#2"
+    },
+    "char_145_prove": {
+      "0": "char_145_prove#1",
+      "2": "char_145_prove#2"
+    },
+    "char_158_milu": {
+      "0": "char_158_milu#1",
+      "2": "char_158_milu#2"
+    },
+    "char_173_slchan": {
+      "0": "char_173_slchan#1",
+      "2": "char_173_slchan#2"
+    },
+    "char_383_snsant": {
+      "0": "char_383_snsant#1",
+      "2": "char_383_snsant#2"
+    },
+    "char_174_slbell": {
+      "0": "char_174_slbell#1",
+      "2": "char_174_slbell#2"
+    },
+    "char_254_vodfox": {
+      "0": "char_254_vodfox#1",
+      "2": "char_254_vodfox#2"
+    },
+    "char_195_glassb": {
+      "0": "char_195_glassb#1",
+      "2": "char_195_glassb#2"
+    },
+    "char_326_glacus": {
+      "0": "char_326_glacus#1",
+      "2": "char_326_glacus#2"
+    },
+    "char_101_sora": {
+      "0": "char_101_sora#1",
+      "2": "char_101_sora#2"
+    },
+    "char_215_mantic": {
+      "0": "char_215_mantic#1",
+      "2": "char_215_mantic#2"
+    },
+    "char_241_panda": {
+      "0": "char_241_panda#1",
+      "2": "char_241_panda#2"
+    },
+    "char_103_angel": {
+      "0": "char_103_angel#1",
+      "2": "char_103_angel#2"
+    },
+    "char_340_shwaz": {
+      "0": "char_340_shwaz#1",
+      "2": "char_340_shwaz#2"
+    },
+    "char_113_cqbw": {
+      "0": "char_113_cqbw#1",
+      "2": "char_113_cqbw#2"
+    },
+    "char_112_siege": {
+      "0": "char_112_siege#1",
+      "2": "char_112_siege#2"
+    },
+    "char_222_bpipe": {
+      "0": "char_222_bpipe#1",
+      "2": "char_222_bpipe#2"
+    },
+    "char_134_ifrit": {
+      "0": "char_134_ifrit#1",
+      "2": "char_134_ifrit#2"
+    },
+    "char_213_mostma": {
+      "0": "char_213_mostma#1",
+      "2": "char_213_mostma#2"
+    },
+    "char_180_amgoat": {
+      "0": "char_180_amgoat#1",
+      "2": "char_180_amgoat#2"
+    },
+    "char_2013_cerber": {
+      "0": "char_2013_cerber#1",
+      "2": "char_2013_cerber#2"
+    },
+    "char_291_aglina": {
+      "0": "char_291_aglina#1",
+      "2": "char_291_aglina#2"
+    },
+    "char_248_mgllan": {
+      "0": "char_248_mgllan#1",
+      "2": "char_248_mgllan#2"
+    },
+    "char_250_phatom": {
+      "0": "char_250_phatom#1",
+      "2": "char_250_phatom#2"
+    },
+    "char_400_weedy": {
+      "0": "char_400_weedy#1",
+      "2": "char_400_weedy#2"
+    },
+    "char_225_haak": {
+      "0": "char_225_haak#1",
+      "2": "char_225_haak#2"
+    },
+    "char_147_shining": {
+      "0": "char_147_shining#1",
+      "2": "char_147_shining#2"
+    },
+    "char_179_cgbird": {
+      "0": "char_179_cgbird#1",
+      "2": "char_179_cgbird#2"
+    },
+    "char_136_hsguma": {
+      "0": "char_136_hsguma#1",
+      "2": "char_136_hsguma#2"
+    },
+    "char_202_demkni": {
+      "0": "char_202_demkni#1",
+      "2": "char_202_demkni#2"
+    },
+    "char_2014_nian": {
+      "0": "char_2014_nian#1",
+      "2": "char_2014_nian#2"
+    },
+    "char_172_svrash": {
+      "0": "char_172_svrash#1",
+      "2": "char_172_svrash#2"
+    },
+    "char_010_chen": {
+      "0": "char_010_chen#1",
+      "2": "char_010_chen#2"
+    },
+    "char_017_huang": {
+      "0": "char_017_huang#1",
+      "2": "char_017_huang#2"
+    },
+    "char_188_helage": {
+      "0": "char_188_helage#1",
+      "2": "char_188_helage#2"
+    },
+    "token_10000_silent_healrb": {
+      "0": "token_10000_silent_healrb#1"
+    },
+    "token_10001_deepcl_tentac": {
+      "0": "token_10001_deepcl_tentac#1"
+    },
+    "token_10003_cgbird_bird": {
+      "0": "token_10003_cgbird_bird#1"
+    },
+    "token_10004_otter_motter": {
+      "0": "token_10004_otter_motter#1"
+    },
+    "token_10005_mgllan_drone1": {
+      "0": "token_10005_mgllan_drone1#1"
+    },
+    "token_10005_mgllan_drone2": {
+      "0": "token_10005_mgllan_drone2#1"
+    },
+    "token_10005_mgllan_drone3": {
+      "0": "token_10005_mgllan_drone3#1"
+    },
+    "token_10006_vodfox_doll": {
+      "0": "token_10006_vodfox_doll#1"
+    },
+    "token_10007_phatom_twin": {
+      "0": "token_10007_phatom_twin#1"
+    },
+    "token_10008_cqbw_box": {
+      "0": "token_10008_cqbw_box#1"
+    },
+    "token_10009_weedy_cannon": {
+      "0": "token_10009_weedy_cannon#1"
+    },
+    "trap_001_crate": {
+      "0": "trap_001_crate#1"
+    },
+    "trap_002_emp": {
+      "0": "trap_002_emp#1"
+    },
+    "trap_003_gate": {
+      "0": "trap_003_gate#1"
+    },
+    "trap_005_sensor": {
+      "0": "trap_005_sensor#1"
+    },
+    "trap_006_antidr": {
+      "0": "trap_006_antidr#1"
+    },
+    "trap_007_ballis": {
+      "0": "trap_007_ballis#1"
+    },
+    "trap_008_farm": {
+      "0": "trap_008_farm#1"
+    },
+    "trap_009_battery": {
+      "0": "trap_009_battery#1"
+    },
+    "trap_010_frosts": {
+      "0": "trap_010_frosts#1"
+    },
+    "trap_011_ore": {
+      "0": "trap_011_ore#1"
+    },
+    "trap_012_mine": {
+      "0": "trap_012_mine#1"
+    },
+    "trap_013_blower": {
+      "0": "trap_013_blower#1"
+    },
+    "char_230_savage": {
+      "0": "char_230_savage#1",
+      "2": "char_230_savage#2"
+    },
+    "char_282_catap": {
+      "0": "char_282_catap#1"
+    },
+    "char_283_midn": {
+      "0": "char_283_midn#1"
+    },
+    "char_137_brownb": {
+      "0": "char_137_brownb#1",
+      "2": "char_137_brownb#2"
+    },
+    "char_164_nightm": {
+      "0": "char_164_nightm#1",
+      "2": "char_164_nightm#2"
+    },
+    "char_220_grani": {
+      "0": "char_220_grani#1",
+      "2": "char_220_grani#2"
+    },
+    "char_263_skadi": {
+      "0": "char_263_skadi#1",
+      "2": "char_263_skadi#2"
+    }
+  }
+}
