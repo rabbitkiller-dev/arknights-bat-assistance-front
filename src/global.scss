@@ -24,7 +24,10 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
-
+//:root {
+//  --ion-color-primary: #1e2023;
+//  --background-focused: hsla(0,0%,100%,.25)
+//}
 body{
   font-size: 16px;
 }

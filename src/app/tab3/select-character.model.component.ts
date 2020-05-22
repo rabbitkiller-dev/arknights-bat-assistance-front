@@ -8,15 +8,10 @@ import {CharAttrEditModelComponent} from './char-attr-edit.model.component';
   template: `
     <ion-header translucent>
       <ion-toolbar>
-        <ion-buttons slot="start">
-          <ion-button (click)="dismiss()">
-            <ion-icon name="close-outline"></ion-icon>
-          </ion-button>
-        </ion-buttons>
         <ion-title>添加干员</ion-title>
         <ion-buttons slot="end">
-          <ion-button (click)="confirm()">
-            <ion-icon name="checkmark-outline"></ion-icon>
+          <ion-button (click)="dismiss()">
+            <ion-icon name="close-outline"></ion-icon>
           </ion-button>
         </ion-buttons>
       </ion-toolbar>
@@ -55,20 +50,29 @@ export class SelectCharacterModelComponent implements OnInit {
       dismissed: true
     });
   }
+
   confirm() {
     this.modalCtrl.dismiss({
       dismissed: true
     });
   }
 
-  async clickChar(char: CharacterTableModel){
+  async clickChar(char: CharacterTableModel) {
     const modal = await this.modalCtrl.create({
+      animated: false,
       component: CharAttrEditModelComponent,
       componentProps: {
         code: char.code,
-      }
+      },
+      presentingElement: await this.modalCtrl.getTop()
     });
-    // this.modalCtrl.dismiss(char);
+    // modal.onWillDismiss().then((result) => {
+    //   if (result.data.dismissed) {
+    //     return;
+    //   }
+    //   this.modalCtrl.dismiss(result.data, 'addCharacter')
+    //   console.log('addCharacter')
+    // });
     return await modal.present();
   }
 }

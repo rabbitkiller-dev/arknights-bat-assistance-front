@@ -4,7 +4,7 @@ import IO from 'socket.io-client';
 // @ts-ignore
 import platform from 'platform';
 import {AlertController, Platform} from '@ionic/angular';
-import {reject} from 'q';
+import {environment} from '../../environments/environment';
 
 /** 用户是否被封禁 */
 let isSeal = false;
@@ -14,10 +14,11 @@ export const SealUserTimeout = 1000 * 60 * 10; // 10分钟
 
 @Injectable({providedIn: 'root'})
 export class IoService {
+  isLogin: boolean;
+  user: { username: string };
   socket: SocketIOClient.Socket;
 
   constructor(
-    public platformRef: PlatformRef,
     public alertController: AlertController,
   ) {
 
@@ -25,12 +26,12 @@ export class IoService {
 
   init() {
     return new Promise((resolve, reject) => {
-      this.socket = new IO('//localhost:9200/', {});
+      this.socket = new IO(environment.serviceHost, {});
       // this.socket = new IO('//47.106.106.88:9200/', {});
       this.socket.on('connect', async () => {
         const token = window.localStorage.getItem('token');
         if (token) {
-          const user = await this.loginByToken(
+          const user = this.user = await this.loginByToken(
             token,
             platform.os?.family,
             platform.name,
@@ -38,7 +39,6 @@ export class IoService {
           );
           resolve(user);
         } else {
-          await this.loginFailback();
           resolve();
         }
       });
@@ -77,6 +77,7 @@ export class IoService {
       },
       {toast: false},
     );
+    this.isLogin = true;
     window.localStorage.setItem('username', user.username);
     return user;
   }
@@ -123,5 +124,29 @@ export class IoService {
         }
       });
     });
+  }
+  async login(
+    username: string,
+    password: string,
+    os: string = '',
+    browser: string = '',
+    environment: string = '',
+  ) {
+    const user = await this.fetch(
+      'login',
+      {
+        username,
+        password,
+        os,
+        browser,
+        environment,
+      },
+    );
+
+    this.isLogin = true;
+    this.user = user;
+    window.localStorage.setItem('token', user.token);
+    window.localStorage.setItem('username', user.username);
+    return user;
   }
 }

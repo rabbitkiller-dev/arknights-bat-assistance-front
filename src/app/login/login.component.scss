@@ -1,0 +1,50 @@
+.ak-box-bg {
+  height: 100%;
+
+  &::before {
+    position: fixed;
+    display: block;
+    content: '';
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: url("../../assets/main.png");
+    background-size: auto 100%;
+    background-position-x: -450px;
+  }
+
+}
+
+.buttons {
+  position: fixed;
+  bottom: 1rem;
+  width: 100%;
+
+  ion-button {
+    --ion-color-primary: #1e2023;
+    --background-focused: hsla(0,0%,100%,.25);
+    --background-activated: #1e2023;
+    --background-focused: #1e2023;
+    //--background-hover: #4c8dff;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.3rem;
+    &:first-child{
+      position: relative;
+      background: hsla(0,0%,100%,.25) border-box !important;
+      border-radius: 0.3rem;
+      &::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: -30px;
+        z-index: -1;
+        filter: blur(20px);
+      }
+    }
+  }
+}

@@ -28,59 +28,272 @@
     margin-bottom: 0.15rem;
   }
 
+  .ak-box-header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 0.74rem;
+    border-top-left-radius: 0.05rem;
+    border-top-right-radius: 0.05rem;
+
+    .ak-box-avatar-img {
+      display: inline-block;
+      width: 0.66rem;
+      height: 0.66rem;
+    }
+
+    .ak-box-username {
+      display: inline-block;
+    }
+  }
+
   .ak-box-support-unit {
     position: relative;
     overflow: hidden;
     min-width: 2.48rem;
     height: 1.56rem;
     margin-right: 0.15rem;
+    background-image: linear-gradient(to right, #ecebeb, #d2d2d2);
+
+    .profession {
+      position: absolute;
+      top: 0.1rem;
+      right: 0.6rem;
+      background-color: #000000;
+      background-size: 0.36rem auto;
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 0.45rem;
+      width: 0.45rem;
+      opacity: 0.8;
+
+      &.PIONEER {
+        background-image: url(../../assets/data/profession/180px-图标_职业_先锋_大图.png);
+      }
+
+      &.MEDIC {
+        background-image: url(../../assets/data/profession/180px-图标_职业_医疗_大图.png);
+      }
+
+      &.CASTER {
+        background-image: url(../../assets/data/profession/180px-图标_职业_术师_大图.png);
+      }
+
+      &.SPECIAL {
+        background-image: url(../../assets/data/profession/180px-图标_职业_特种_大图.png);
+      }
+
+      &.SNIPER {
+        background-image: url(../../assets/data/profession/180px-图标_职业_狙击_大图.png);
+      }
+
+      &.SUPPORT {
+        background-image: url(../../assets/data/profession/180px-图标_职业_辅助_大图.png);
+      }
+
+      &.WARRIOR {
+        background-image: url(../../assets/data/profession/180px-图标_职业_近卫_大图.png);
+      }
+
+      &.TANK {
+        background-image: url(../../assets/data/profession/180px-图标_职业_重装_大图.png);
+      }
+    }
+
+    .level {
+      position: absolute;
+      top: 0.1rem;
+      right: 0.11rem;
+      border-radius: 50%;
+      background-color: #000000;
+      background-size: 0.36rem auto;
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 0.45rem;
+      width: 0.45rem;
+      font-size: 0.22rem;
+      text-align: center;
+      line-height: 0.45rem;
+      color: #ffffff;
+      opacity: 0.8;
+    }
+
+    .phase {
+      position: absolute;
+      right: 0.6rem;
+      bottom: 0.13rem;
+      background-color: #000000;
+      background-size: 0.36rem auto;
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 0.45rem;
+      width: 0.45rem;
+      opacity: 0.8;
+
+      &.phase-0 {
+        background-image: url(../../assets/data/phase/180px-精英_0_大图.png);
+      }
+
+      &.phase-1 {
+        background-image: url(../../assets/data/phase/180px-精英_1_大图.png);
+      }
+
+      &.phase-2 {
+        background-image: url(../../assets/data/phase/180px-精英_2_大图.png);
+      }
+    }
+
+    .potentialRank {
+      position: absolute;
+      right: 0.11rem;
+      bottom: 0.13rem;
+      height: 0.45rem;
+      width: 0.45rem;
+      background-color: #000000;
+      background-size: 0.36rem auto;
+      background-repeat: no-repeat;
+      background-position: center;
+      opacity: 0.8;
+
+      &.potentialRank-0 {
+        background-image: url(../../assets/data/potentialRank/180px-潜能_0.png);
+      }
+
+      &.potentialRank-1 {
+        background-image: url(../../assets/data/potentialRank/180px-潜能_1.png);
+
+      }
+
+      &.potentialRank-2 {
+        background-image: url(../../assets/data/potentialRank/180px-潜能_2.png);
+
+      }
+
+      &.potentialRank-3 {
+        background-image: url(../../assets/data/potentialRank/180px-潜能_3.png);
+
+      }
+
+      &.potentialRank-4 {
+        background-image: url(../../assets/data/potentialRank/180px-潜能_4.png);
+
+      }
+
+      &.potentialRank-5 {
+        background-image: url(../../assets/data/potentialRank/180px-潜能_5.png);
+
+      }
+    }
+
+    .ak-box-avatar-img {
+      position: relative;
+      display: inline-block;
+      width: 1.56rem;
+      height: 1.56rem;
+
+      &:last-of-type {
+        position: absolute;
+        transform: rotateY(180deg);
+
+        &::after {
+          content: '';
+          width: 0.78rem;
+          height: 1.56rem;
+          position: absolute;
+          top: 0;
+          right: 0.15rem;
+          background-image: linear-gradient(to left, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 1));
+        }
+      }
+    }
   }
 
   .ak-box-skills {
     display: flex;
     height: 100%;
     width: 100%;
-  }
-}
 
-
-.ak-box-avatar-img {
-  display: inline-block;
-  width: 1.56rem;
-  height: 1.56rem;
-
-  &:last-of-type {
-    position: absolute;
-    transform: rotateY(180deg);
-
-    &::after {
-      content: '';
-      width: 0.78rem;
+    .ax-box-skill-icon {
+      position: relative;
+      width: 1.49rem;
       height: 1.56rem;
-      position: absolute;
-      top: 0;
-      right: 0.15rem;
-      background-image: linear-gradient(to left, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 1));
+      background-image: linear-gradient(to right, #ecebeb, #d2d2d2);
+      // 无技能
+      &.blank {
+        background: rgba(23, 29, 24, 0.9);
+      }
+
+      // 技能图标
+      .skill-img {
+        position: absolute;
+        top: 0.3rem;
+        left: 0.4rem;
+        width: 0.66rem;
+        height: 0.66rem;
+      }
+
+      // 技能名称
+      .skill-name {
+        position: absolute;
+        top: 1.01rem;
+        width: 100%;
+        text-align: center;
+        font-size: 0.18rem;
+        color: #4a4c49;
+      }
+
+      // 专精
+      .mastery {
+        position: absolute;
+        top: 0.2rem;
+        right: 0.3rem;
+        width: 0.25rem;
+        height: 0.25rem;
+      }
+
+      // 下边栏
+      .skill-bar {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 0.12rem;
+        background: #4a4c49;
+      }
+
+      // 等级
+      .skill-level {
+        position: absolute;
+        top: 0.2rem;
+        left: 0.22rem;
+        width: 0.5rem;
+        height: 0.28rem;
+        line-height: 0.28rem;
+        font-size: 0.22rem;
+        color: #ffffff;
+        text-align: center;
+        background-color: #080808;
+        border: 0.5px solid #939393;
+      }
+
+      &:not(:last-of-type) {
+        margin-right: 0.1rem;
+      }
     }
   }
 }
 
-.ax-box-skill-icon {
-  position: relative;
-  width: 1.49rem;
-  height: 1.56rem;
-  background-image: linear-gradient(to right, #dedce1, #f6eeee);
-  .skill-img{
-    position: absolute;
-    top: 0.3rem;
-    left: 0.4rem;
-    width: 0.66rem;
-    height: 0.66rem;
-  }
-  .level{
+.ak-box-bg {
+  height: 100%;
 
-  }
-  &:not(:last-of-type){
-    margin-right: 0.1rem;
+  &::before {
+    position: fixed;
+    display: block;
+    content: '';
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: url("../../assets/main.png");
+    filter: blur(5px);
   }
 }

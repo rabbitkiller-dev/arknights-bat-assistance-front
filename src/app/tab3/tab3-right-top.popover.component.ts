@@ -12,20 +12,17 @@ import {SelectCharacterModelComponent} from './select-character.model.component'
 export class Tab3RightTopPopoverComponent {
   constructor(public modalController: ModalController, public popoverController: PopoverController) {
   }
-
   async showSelectCharacter($event) {
     const modal = await this.modalController.create({
       component: SelectCharacterModelComponent,
     });
-    modal.addEventListener('confirm', this.selectCharacterHandler.bind(this));
-    modal.addEventListener('done', this.selectCharacterHandler.bind(this));
 
     modal.onWillDismiss().then((result) => {
       if (result.data.dismissed) {
         this.popoverController.dismiss({dismissed: true});
         return;
       }
-      this.popoverController.dismiss(result, 'addCharacter');
+      this.popoverController.dismiss(result.data, result.role);
     });
     return await modal.present();
   }

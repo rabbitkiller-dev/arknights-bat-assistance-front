@@ -1,17 +1,81 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
+    <ion-title>支援招募</ion-title>
   </ion-toolbar>
 </ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+<ion-content>
+  <div class="ak-box-bg">
+    <ion-header collapse="condense">
+      <ion-toolbar>
+        <ion-title size="large">Tab 2</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <div class="ak-box">
+      <div class="ak-box-title">
+        <div class="ak-box-support-unit">
+          <span class="ak-box-support-unit-title">支援单位</span>
+        </div>
+        <div class="ak-box-skills">
+          <span class="ak-box-support-unit-title">支援单位</span>
+        </div>
+      </div>
+      <div class="ak-box-content">
+        <ion-virtual-scroll #virtualScroll [items]="supportList2" approxItemHeight="365px">
+          <div class="ak-box-item" *virtualItem="let item; let itemBounds = bounds;">
+            <div class="ak-box-header">
+              <ion-img class="ak-box-avatar-img" [src]="item.creator.avatar"></ion-img>
+              <div class="ak-box-username">Dr.{{item.creator.username}}</div>
+            </div>
+            <div style="display: flex;width: 100%;">
+              <div class="ak-box-support-unit">
+                <ion-img class="ak-box-avatar-img" [src]="item.avatar"></ion-img>
+                <ion-img class="ak-box-avatar-img" [src]="item.avatar"></ion-img>
+                <div class="profession {{item.profession}}"></div>
+                <div class="level">{{item.level}}</div>
+                <div class="phase phase-{{item.phase}}"></div>
+                <div class="potentialRank potentialRank-{{item.potentialRank}}"></div>
+              </div>
+              <div class="ak-box-skills">
+                <div class="ax-box-skill-icon" *ngIf="item.skills[0];else skillBlank">
+                  <ion-img class="skill-img" [src]="item.skills[0].imgUrl"></ion-img>
+                  <div class="skill-name">{{item.skills[0].name}}</div>
+                <div class="skill-level">{{item.skills[0].level > 7 ? 7 : item.skills[0].level}}</div>
+                  <ion-img class="mastery" *ngIf="item.skills[0].level > 7;else noMasterySkill" src="assets/data/专精/专精_{{item.skills[0].level - 7}}_角标.png"></ion-img>
+                  <div class="skill-bar"></div>
+                </div>
+                <div class="ax-box-skill-icon" *ngIf="item.skills[1];else skillBlank">
+                  <ion-img class="skill-img" [src]="item.skills[1].imgUrl"></ion-img>
+                  <div class="skill-name">{{item.skills[1].name}}</div>
+                <div class="skill-level">{{item.skills[1].level > 7 ? 7 : item.skills[1].level}}</div>
+                  <ion-img class="mastery" *ngIf="item.skills[1].level > 7;else noMasterySkill" src="assets/data/专精/专精_{{item.skills[1].level - 7}}_角标.png"></ion-img>
+                  <div class="skill-bar"></div>
+                </div>
+                <div class="ax-box-skill-icon" *ngIf="item.skills[2];else skillBlank">
+                  <ion-img class="skill-img" [src]="item.skills[2].imgUrl"></ion-img>
+                  <div class="skill-name">{{item.skills[2].name}}</div>
+                <div class="skill-level">{{item.skills[2].level > 7 ? 7 : item.skills[2].level}}</div>
+                  <ion-img class="mastery" *ngIf="item.skills[2].level > 7;else noMasterySkill" src="assets/data/专精/专精_{{item.skills[2].level - 7}}_角标.png"></ion-img>
+                  <div class="skill-bar"></div>
+                </div>
+                <ng-template #noMasterySkill>
+                  <ion-img class="mastery" src="assets/data/专精/专精_0_角标.png"></ion-img>
+                </ng-template>
+                <ng-template #skillBlank>
+                  <div class="ax-box-skill-icon blank">
+                    <ion-img class="skill-img" src="assets/data/skill-blank.png"></ion-img>
+                    <div class="skill-bar"></div>
+                  </div>
+                </ng-template>
+              </div>
+            </div>
+          </div>
+        </ion-virtual-scroll>
+        <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+          <ion-infinite-scroll-content></ion-infinite-scroll-content>
+        </ion-infinite-scroll>
+      </div>
+    </div>
+    <!--  TODO 登录 -->
+    <!--  <app-explore-container name="Tab 2 page"></app-explore-container>-->
+  </div>
 </ion-content>

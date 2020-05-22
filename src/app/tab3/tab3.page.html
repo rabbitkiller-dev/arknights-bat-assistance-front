@@ -4,49 +4,77 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">我的支援</ion-title>
-      <ion-buttons slot="primary">
-        <ion-button (click)="presentPopover($event)">
-          <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
-        </ion-button>
-      </ion-buttons>
-    </ion-toolbar>
-  </ion-header>
-
-<!--  <app-explore-container name="Tab 3 page"></app-explore-container>-->
-
-  <div>
-    可支援人数: 2 正在支援: 3 <a>调整剩余好友位(5)</a>
-  </div>
-  <div class="ak-box">
-    <div class="ak-box-title">
-      <div class="ak-box-support-unit">
-        <span class="ak-box-support-unit-title">支援单位</span>
-      </div>
-      <div class="ak-box-skills">
-        <span class="ak-box-support-unit-title">支援单位</span>
-      </div>
+<ion-content>
+  <div class="ak-box-bg">
+    <ion-header collapse="condense">
+      <ion-toolbar>
+        <ion-title size="large">我的支援</ion-title>
+        <ion-buttons slot="primary">
+          <ion-button (click)="presentPopover($event)">
+            <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <!--  <app-explore-container name="Tab 3 page"></app-explore-container>-->
+    <div>
+      可支援人数: 2 正在支援: 3 <a>调整剩余好友位(5)</a>
     </div>
-    <div class="ak-box-content">
-      <ion-virtual-scroll [items]="myCharacterList" approxItemHeight="320px">
-        <div class="ak-box-item" *virtualItem="let item; let itemBounds = bounds;">
-          <div class="ak-box-support-unit">
-            <ion-img class="ak-box-avatar-img" [src]="item.avatar"></ion-img>
-            <ion-img class="ak-box-avatar-img" [src]="item.avatar"></ion-img>
-          </div>
-          <div class="ak-box-skills">
-            <div class="ax-box-skill-icon" *ngFor="let skill of item.skills">
-              <ion-img class="skill-img" [src]="skill.imgUrl"></ion-img>
-            </div>
-            <div class="ax-box-skill-icon" *ngIf="item.skills.length < 1"></div>
-            <div class="ax-box-skill-icon" *ngIf="item.skills.length < 2"></div>
-            <div class="ax-box-skill-icon" *ngIf="item.skills.length < 3"></div>
-          </div>
+    <div class="ak-box">
+      <div class="ak-box-title">
+        <div class="ak-box-support-unit">
+          <span class="ak-box-support-unit-title">支援单位</span>
         </div>
-      </ion-virtual-scroll>
+        <div class="ak-box-skills">
+          <span class="ak-box-support-unit-title">支援单位</span>
+        </div>
+      </div>
+      <div class="ak-box-content">
+        <ion-virtual-scroll [items]="myCharacterList" approxItemHeight="365px">
+          <div class="ak-box-item" *virtualItem="let item; let itemBounds = bounds;">
+            <div class="ak-box-support-unit" (click)="openModifyChar($event, item)">
+              <ion-img class="ak-box-avatar-img" [src]="item.avatar"></ion-img>
+              <ion-img class="ak-box-avatar-img" [src]="item.avatar"></ion-img>
+              <div class="profession {{item.profession}}"></div>
+              <div class="level">{{item.level}}</div>
+              <div class="phase phase-{{item.phase}}"></div>
+              <div class="potentialRank potentialRank-{{item.potentialRank}}"></div>
+            </div>
+            <div class="ak-box-skills">
+              <div class="ax-box-skill-icon" *ngIf="item.skills[0];else skillBlank">
+                <ion-img class="skill-img" [src]="item.skills[0].imgUrl"></ion-img>
+                <div class="skill-name">{{item.skills[0].name}}</div>
+                <div class="skill-level">{{item.skills[0].level > 7 ? 7 : item.skills[0].level}}</div>
+                <ion-img class="mastery" *ngIf="item.skills[0].level > 7;else noMasterySkill" src="assets/data/专精/专精_{{item.skills[0].level - 7}}_角标.png"></ion-img>
+                <div class="skill-bar"></div>
+              </div>
+              <div class="ax-box-skill-icon" *ngIf="item.skills[1];else skillBlank">
+                <ion-img class="skill-img" [src]="item.skills[1].imgUrl"></ion-img>
+                <div class="skill-name">{{item.skills[1].name}}</div>
+                <div class="skill-level">{{item.skills[1].level > 7 ? 7 : item.skills[1].level}}</div>
+                <ion-img class="mastery" *ngIf="item.skills[1].level > 7;else noMasterySkill" src="assets/data/专精/专精_{{item.skills[1].level - 7}}_角标.png"></ion-img>
+                <div class="skill-bar"></div>
+              </div>
+              <div class="ax-box-skill-icon" *ngIf="item.skills[2];else skillBlank">
+                <ion-img class="skill-img" [src]="item.skills[2].imgUrl"></ion-img>
+                <div class="skill-name">{{item.skills[2].name}}</div>
+                <div class="skill-level">{{item.skills[2].level > 7 ? 7 : item.skills[2].level}}</div>
+                <ion-img class="mastery" *ngIf="item.skills[2].level > 7;else noMasterySkill" src="assets/data/专精/专精_{{item.skills[2].level - 7}}_角标.png"></ion-img>
+                <div class="skill-bar"></div>
+              </div>
+              <ng-template #noMasterySkill>
+                <ion-img class="mastery" src="assets/data/专精/专精_0_角标.png"></ion-img>
+              </ng-template>
+              <ng-template #skillBlank>
+                  <div class="ax-box-skill-icon blank">
+                    <ion-img class="skill-img" src="assets/data/skill-blank.png"></ion-img>
+                  <div class="skill-bar"></div>
+                </div>
+              </ng-template>
+            </div>
+          </div>
+        </ion-virtual-scroll>
+      </div>
     </div>
   </div>
 </ion-content>
