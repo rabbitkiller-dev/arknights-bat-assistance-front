@@ -19,8 +19,6 @@ export class Tab1Page implements AfterViewInit {
 
   joinIframe() {
     window.addEventListener('message', ($event) => {
-      console.log($event.type);
-      console.log($event.data.type);
       if ($event.data.type === 'getToken') {
         this.ctiRef.nativeElement.contentWindow.postMessage({
           type: 'getTokenCallback',

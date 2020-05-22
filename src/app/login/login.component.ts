@@ -5,6 +5,7 @@ import {SignInComponent} from './sign-in.component';
 import {AlertController, ModalController} from '@ionic/angular';
 import {CharacterService} from '../service/character.service';
 import {IoService} from '../service/io.service';
+import {SignUpComponent} from './sign-up.component';
 
 @Component({
   selector: 'login',
@@ -56,6 +57,19 @@ export class LoginComponent {
   async clickSignIn($event) {
     const modal = await this.modalCtrl.create({
       component: SignInComponent,
+    });
+    modal.onWillDismiss().then((result) => {
+      if (result.data.dismissed) {
+        return;
+      }
+      console.log(result);
+    });
+    return await modal.present();
+  }
+
+  async clickSignUp($event) {
+    const modal = await this.modalCtrl.create({
+      component: SignUpComponent,
     });
     modal.onWillDismiss().then((result) => {
       if (result.data.dismissed) {

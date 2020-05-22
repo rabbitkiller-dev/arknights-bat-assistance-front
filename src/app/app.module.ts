@@ -12,12 +12,14 @@ import {HttpClientModule} from '@angular/common/http';
 import {LoginComponent} from './login/login.component';
 import {FormsModule} from '@angular/forms';
 import {SignInComponent} from './login/sign-in.component';
+import {SignUpComponent} from './login/sign-up.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     SignInComponent,
+    SignUpComponent,
   ],
   entryComponents: [],
   imports: [

@@ -149,4 +149,28 @@ export class IoService {
     window.localStorage.setItem('username', user.username);
     return user;
   }
+  async register(
+    username: string,
+    password: string,
+    os = '',
+    browser = '',
+    environment = '',
+  ) {
+    const user = await this.fetch(
+      'register',
+      {
+        username,
+        password,
+        os,
+        browser,
+        environment,
+      },
+    );
+
+    this.isLogin = true;
+    this.user = user;
+    window.localStorage.setItem('token', user.token);
+    window.localStorage.setItem('username', user.username);
+    return user;
+  }
 }
