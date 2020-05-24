@@ -7,7 +7,7 @@ export interface CharacterDataModel {
 
   profession?: string; // 职业
   avatar?: string; // 头图
-  creator?: string | {username: string, avatar: string}
+  creator?: {_id: string, username: string, avatar: string}
 }
 export interface CharacterSkillModel {
   skillId: string; // 技能id

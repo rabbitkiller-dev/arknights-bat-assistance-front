@@ -3,6 +3,8 @@ import {IoService} from '../service/io.service';
 import {CharacterDataModel} from '../model/character-data.model';
 import {CharacterService} from '../service/character.service';
 import {IonVirtualScroll} from '@ionic/angular';
+import {UserModel} from '../model/user.model';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-tab2',
@@ -13,40 +15,60 @@ export class Tab2Page implements OnInit {
   // 支援列表
   @ViewChild(IonVirtualScroll) virtualScroll: IonVirtualScroll;
   supportList: CharacterDataModel[] = [];
-  supportList2: CharacterDataModel[] = [];
+  index = 0;
+  total: number;
 
   constructor(
+    public router: Router,
     public ioService: IoService,
     public characterService: CharacterService,
   ) {
   }
 
   async ngOnInit(): Promise<void> {
-    this.supportList = await this.querySupportList();
-    console.log(this.supportList);
-    this.supportList2 = [...this.supportList, ...this.supportList]
+    await this.querySupportList();
   }
 
-  async querySupportList(params?: { code?: string }): Promise<CharacterDataModel[]> {
-    const supportList: CharacterDataModel[] = await this.ioService.fetch<CharacterDataModel[]>('getSupportList', params || {});
-    supportList.map((char) => {
+  async querySupportList(params: { code?: string } = {}, reload: boolean = false): Promise<CharacterDataModel[]> {
+    if (reload) {
+      this.supportList.length = 0;
+      this.index = 0;
+    }
+    // if (this.total && this.supportList.length >= this.total) {
+    //   return;
+    // }
+    const result = await this.ioService.fetch<{ result: CharacterDataModel[], total: number }>('getSupportList', {
+      ...params,
+      page: {index: this.index},
+    });
+    this.index++;
+    this.total = result.total;
+    result.result.map((char) => {
       return this.characterService.profileCharacterDataModel(char);
     });
-    return supportList;
+    this.supportList.push(...result.result);
+    return result.result;
   }
 
-  loadData($event) {
-    setTimeout(() => {
-      console.log('done', $event);
-      this.supportList2.push(...this.supportList);
-      console.log(this.virtualScroll.checkRange)
-      this.virtualScroll.checkEnd();
-      $event.target.complete();
-      // App logic to determine if all data is loaded
-      // and disable the infinite scroll
-      if (this.supportList2.length == 1000) {
-        $event.target.disabled = true;
+  async loadData($event) {
+    await this.querySupportList();
+    this.virtualScroll.checkEnd();
+    $event.target.complete();
+    if (this.total && this.supportList.length >= this.total) {
+      $event.target.disabled = true;
+    }
+  }
+
+  async addFriend(item: CharacterDataModel) {
+    this.router.navigate(['/tabs/tab1'], {
+      queryParams: {
+        id: item.creator._id,
       }
-    }, 2000);
+    });
+  }
+
+  async doRefresh($event) {
+    await this.querySupportList({}, true);
+    $event.target.complete();
   }
 }

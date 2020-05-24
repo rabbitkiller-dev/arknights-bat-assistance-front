@@ -1,14 +1,18 @@
+ion-header {
+  --ion-background-color: transparent
+}
+
 .ak-box {
 }
 
 .ak-box-title {
   display: flex;
   position: relative;
-  height: 20px;
+  height: 0.39rem;
   background: #171d18;
   color: #fff;
-  line-height: 20px;
-  font-size: 12px;
+  line-height: 0.39rem;
+  font-size: 0.27rem;
   margin-bottom: 0.15rem;
 
   .ak-box-support-unit {
@@ -49,6 +53,12 @@
       display: inline-block;
       color: #fff;
       margin: 0 0.1rem;
+      flex: 1;
+    }
+
+    .ak-box-add {
+      margin-right: 0.5rem;
+      color: #fff;
     }
   }
 
@@ -299,6 +309,8 @@
     left: 0;
     top: 0;
     background: url("../../assets/main.png");
+    background-size: auto 100%;
+    background-position-x: -450px;
     filter: blur(5px);
   }
 }

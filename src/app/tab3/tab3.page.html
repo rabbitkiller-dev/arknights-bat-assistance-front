@@ -1,4 +1,4 @@
-<ion-header [translucent]="true">
+<ion-header style="--ion-background-color:transparent">
   <ion-toolbar>
     <ion-title>我的支援</ion-title>
   </ion-toolbar>
@@ -11,15 +11,13 @@
         <ion-title size="large">我的支援</ion-title>
         <ion-buttons slot="primary">
           <ion-button (click)="presentPopover($event)">
-            <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
+            <ion-icon name="add-outline"></ion-icon>
+<!--            <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>-->
           </ion-button>
         </ion-buttons>
       </ion-toolbar>
     </ion-header>
     <!--  <app-explore-container name="Tab 3 page"></app-explore-container>-->
-    <div>
-      可支援人数: 2 正在支援: 3 <a>调整剩余好友位(5)</a>
-    </div>
     <div class="ak-box">
       <div class="ak-box-title">
         <div class="ak-box-support-unit">

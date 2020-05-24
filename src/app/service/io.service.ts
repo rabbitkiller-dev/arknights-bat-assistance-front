@@ -5,6 +5,7 @@ import IO from 'socket.io-client';
 import platform from 'platform';
 import {AlertController, Platform} from '@ionic/angular';
 import {environment} from '../../environments/environment';
+import {UserModel} from '../model/user.model';
 
 /** 用户是否被封禁 */
 let isSeal = false;
@@ -15,7 +16,7 @@ export const SealUserTimeout = 1000 * 60 * 10; // 10分钟
 @Injectable({providedIn: 'root'})
 export class IoService {
   isLogin: boolean;
-  user: { username: string };
+  user: { _id: string, username: string };
   socket: SocketIOClient.Socket;
 
   constructor(
@@ -171,6 +172,11 @@ export class IoService {
     this.user = user;
     window.localStorage.setItem('token', user.token);
     window.localStorage.setItem('username', user.username);
+    return user;
+  }
+
+  async addFriend(userId: string) {
+    const user = await this.fetch<UserModel>('addFriend', { userId });
     return user;
   }
 }

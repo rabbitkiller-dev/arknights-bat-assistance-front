@@ -1,13 +1,16 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>支援招募</ion-title>
+    <ion-title>支援列表</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content>
+  <ion-refresher [pullFactor]="0.8" [pullMin]="10" slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
   <div class="ak-box-bg">
     <ion-header collapse="condense">
       <ion-toolbar>
-        <ion-title size="large">Tab 2</ion-title>
+        <ion-title size="large">支援列表</ion-title>
       </ion-toolbar>
     </ion-header>
     <div class="ak-box">
@@ -20,11 +23,12 @@
         </div>
       </div>
       <div class="ak-box-content">
-        <ion-virtual-scroll #virtualScroll [items]="supportList2" approxItemHeight="365px">
+        <ion-virtual-scroll #virtualScroll [items]="supportList" approxItemHeight="365px">
           <div class="ak-box-item" *virtualItem="let item; let itemBounds = bounds;">
             <div class="ak-box-header">
               <ion-img class="ak-box-avatar-img" [src]="item.creator.avatar"></ion-img>
               <div class="ak-box-username">Dr.{{item.creator.username}}</div>
+              <div class="ak-box-add" *ngIf="ioService.user._id !== item.creator._id" (click)="addFriend(item)">向他发送消息</div>
             </div>
             <div style="display: flex;width: 100%;">
               <div class="ak-box-support-unit">
